@@ -9,7 +9,7 @@ public class Menu {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digite o nome do Pokemon:");
         nome= scanner.nextLine();
-        Pokemon pokemon = new Pokemon("swsh2-36", "https://images.pokemontcg.io/swsh2/36_hires.png",nome, "Rare Holo", "SW/SW", "Rebel Clash");
+        Pokemon pokemon = new Pokemon("swsh2-36", "https://images.pokemontcg.io/swsh2/36_hires.png",nome, "Rare Holo", "SW/SW", "Rebel Clash",2);
         System.out.println("O pokemon é:" + pokemon.getNome()+ " Sura raridade é:" + pokemon.getRaridade());
     }
 }

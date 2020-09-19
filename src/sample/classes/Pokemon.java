@@ -39,6 +39,6 @@ public class Pokemon {
     }
 
     private String URL, Nome, Raridade, Serie, Colecao, ID;
-    
+
     private int quantidade;
 }
