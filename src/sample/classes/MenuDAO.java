@@ -26,16 +26,16 @@ public class MenuDAO {
                     alive = false;
                     break;
                 case 1:
-                    atualizarCarta();
+                    exibirCartas();
                     break;
                 case 2:
                     deletarCarta();
                     break;
                 case 3:
-                    adicionarCarta();
+                    atualizarCarta();
                     break;
                 case 4:
-                    cadastrarNovaCarta();
+                    adicionarCarta();
                     break;
                 default:
                     System.out.println("Opcao Invalida!");
@@ -85,6 +85,11 @@ public class MenuDAO {
         pokemonDAO.delete(pokemon);
     }
 
+    private void exibirCartas() {
+        pokemons = pokemonDAO.getAll();
+        System.out.println("Produto:");
+        pokemons.forEach( pokemon-> System.out.println(pokemon));
+    }
     private void menu() {
         System.out.println("Menu das cartas");
         System.out.println("1 - Exibir inventário");

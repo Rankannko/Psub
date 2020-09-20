@@ -8,7 +8,7 @@ import sample.classes.Pokemon;
 
 public class PokemonDAO implements DAO<Pokemon>, DAOFields{
     private Connection connection;
-    private final String myDBConnectionString = "jdbc:sqlite:sqlite_paramodificar.db";
+    private String myDBConnectionString = "jdbc:sqlite:sqlite_paramodificar.db";
 
     public PokemonDAO(){
     try{

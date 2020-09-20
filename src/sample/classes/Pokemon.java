@@ -38,7 +38,17 @@ public class Pokemon {
         return quantidade;
     }
 
-    private String URL, Nome, Raridade, Serie, Colecao, ID;
+    private String URL;
+    private String Nome;
+    private String Raridade;
+    private String Serie;
+    private String Colecao;
+
+    public Pokemon(String ID) {
+        this.ID = ID;
+    }
+
+    private String ID;
 
     private int quantidade;
 }
