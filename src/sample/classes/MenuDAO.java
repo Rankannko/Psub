@@ -20,7 +20,7 @@ public class MenuDAO {
         boolean alive= true;
         do{
             menu();
-            int opcao = Integer.parseInt(scanner.next());
+            int opcao = Integer.parseInt(scanner.nextLine());
             switch (opcao){
                 case 0:
                     alive = false;
@@ -47,19 +47,19 @@ public class MenuDAO {
     private void atualizarCarta() {
         pokemons = pokemonDAO.getAll();
         System.out.println("Excrever ID da carta a ser atualizada:");
-        String ID = scanner.next();
+        String ID = scanner.nextLine();
         System.out.println("Cadastre os novos valores:");
         String URL, Nome, Raridade, Serie, Colecao;
         int quantidade;
         System.out.println("Informe os dados:");
-        URL = scanner.next();
-        Nome = scanner.next();
-        Raridade = scanner.next();
-        Serie = scanner.next();
-        Colecao = scanner.next();
-        quantidade = Integer.parseInt(scanner.next());
+        URL = scanner.nextLine();
+        Nome = scanner.nextLine();
+        Raridade = scanner.nextLine();
+        Serie = scanner.nextLine();
+        Colecao = scanner.nextLine();
+        quantidade = Integer.parseInt(scanner.nextLine());
         pokemonDAO.update(new Pokemon(
-                ID,URL, Nome, Raridade,Serie,Colecao, quantidade
+                ID, URL, Nome, Raridade, Serie, Colecao, quantidade
         ));
     }
 
@@ -67,21 +67,21 @@ public class MenuDAO {
         String URL, Nome, Raridade, Serie, Colecao,ID;
         int quantidade;
         System.out.println("Informe os dados da nova Carta:");
-        ID= scanner.next();
-        URL = scanner.next();
-        Nome = scanner.next();
-        Raridade = scanner.next();
-        Serie = scanner.next();
-        Colecao = scanner.next();
-        quantidade = Integer.parseInt(scanner.next());
+        ID= scanner.nextLine();
+        URL = scanner.nextLine();
+        Nome = scanner.nextLine();
+        Raridade = scanner.nextLine();
+        Serie = scanner.nextLine();
+        Colecao = scanner.nextLine();
+        quantidade = Integer.parseInt(scanner.nextLine());
         pokemonDAO.create(new Pokemon(
-                ID,URL, Nome, Raridade,Serie,Colecao, quantidade
+                ID,URL, Nome, Raridade,Serie,Colecao,quantidade
         ));
     }
     private void deletarCarta() {
-        System.out.println("Codigo da carta:");
-        String codigo = scanner.next();
-        Pokemon pokemon = new Pokemon(codigo);
+        System.out.println("Id da carta:");
+        String Id = scanner.nextLine();
+        Pokemon pokemon = new Pokemon(Id);
         pokemonDAO.delete(pokemon);
     }
 

@@ -1,6 +1,14 @@
 package sample.classes;
 
 public class Pokemon {
+    private String URL;
+    private String Nome;
+    private String Raridade;
+    private String Serie;
+    private String Colecao;
+    private String ID;
+    private int quantidade;
+
     public Pokemon(String ID, String URL, String nome, String raridade, String serie, String colecao, int quantidade) {
         this.URL = URL;
         this.Nome = nome;
@@ -10,15 +18,17 @@ public class Pokemon {
         this.ID = ID;
         this.quantidade=quantidade;
     }
+
+    public Pokemon(String ID) { this(ID,null,null,null,null,null,0); }
     @Override
     public String toString() {
         return "Pokemon{" +
                 "ID='" + ID + '\'' +
                 ", URL='" + URL + '\'' +
                 ", Nome='" + Nome + '\'' +
-                ", Raridade=" + Raridade +
-                ", Serie=" + Serie +
-                ", Colecao=" + Colecao +
+                ", Raridade=" + Raridade + '\'' +
+                ", Serie=" + Serie + '\'' +
+                ", Colecao=" + Colecao+ '\'' +
                 ", quantidade=" + quantidade +
                 '}';
     }
@@ -46,21 +56,9 @@ public class Pokemon {
     public String getID() {
         return ID;
     }
+
     public int getQuantidade() {
         return quantidade;
     }
 
-    private String URL;
-    private String Nome;
-    private String Raridade;
-    private String Serie;
-    private String Colecao;
-
-    public Pokemon(String ID) {
-        this.ID = ID;
-    }
-
-    private String ID;
-
-    private int quantidade;
 }

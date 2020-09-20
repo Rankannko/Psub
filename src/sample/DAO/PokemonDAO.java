@@ -79,6 +79,7 @@ public class PokemonDAO implements DAO<Pokemon>, DAOFields{
             preparedStatement.setString(5, pokemon.getSerie());
             preparedStatement.setString(6, pokemon.getColecao());
             preparedStatement.setInt(7, pokemon.getQuantidade());
+            preparedStatement.setString(8, pokemon.getID());
             int retorno = preparedStatement.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();
@@ -118,17 +119,17 @@ public class PokemonDAO implements DAO<Pokemon>, DAOFields{
 
     @Override
     public String getDeleteString(String table) {
-        return "DELETE FROM "+ table +" WHERE codigo = ?";
+        return "DELETE FROM "+ table +" WHERE Id = ?";
     }
 
     @Override
     public String getUpdateString(String table) {
-        return "UPDATE "+ table +" SET codigo = ?, nome = ?, descricao = ?, custo = ?, valor = ?, quantidade = ? WHERE codigo = ?;";
+        return "UPDATE "+ table +" SET Id = ?, URL = ?, nome = ?, raridade = ?, serie = ?, colecao = ?, quantidade = ? WHERE Id = ?;";
     }
 
     @Override
     public String getInsertString(String table) {
-        return "INSERT INTO "+ table + " (codigo, nome, descricao, custo, valor, quantidade) VALUES (?, ?, ?, ?, ?, ?);";
+        return "INSERT INTO "+ table + " (Id, url, nome, raridade, serie, colecao, quantidade) VALUES (?, ?, ?, ?, ?, ?, ?);";
     }
 
     @Override
