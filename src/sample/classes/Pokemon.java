@@ -7,16 +7,16 @@ public class Pokemon {
     private String Serie;
     private String Colecao;
     private String ID;
-    private int quantidade;
+    private int Quantidade;
 
-    public Pokemon(String ID, String URL, String nome, String raridade, String serie, String colecao, int quantidade) {
+    public Pokemon(String ID, String URL, String nome, String raridade, String serie, String colecao, int Quantidade) {
         this.URL = URL;
         this.Nome = nome;
         this.Raridade = raridade;
         this.Serie = serie;
         this.Colecao = colecao;
         this.ID = ID;
-        this.quantidade=quantidade;
+        this.Quantidade =Quantidade;
     }
 
     public Pokemon(String ID) { this(ID,null,null,null,null,null,0); }
@@ -29,7 +29,7 @@ public class Pokemon {
                 ", Raridade=" + Raridade + '\'' +
                 ", Serie=" + Serie + '\'' +
                 ", Colecao=" + Colecao+ '\'' +
-                ", quantidade=" + quantidade +
+                ", Quantidade=" + Quantidade +
                 '}';
     }
 
@@ -58,7 +58,7 @@ public class Pokemon {
     }
 
     public int getQuantidade() {
-        return quantidade;
+        return Quantidade;
     }
 
 }

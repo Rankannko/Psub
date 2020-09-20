@@ -32,7 +32,7 @@ public class PokemonDAO implements DAO<Pokemon>, DAOFields{
                         result.getString("raridade"),
                         result.getString("serie"),
                         result.getString("colecao"),
-                        result.getInt("quantidade")
+                        result.getInt("Quantidade")
                 );
                 pokemons.add(pokemon);
             }
@@ -124,12 +124,12 @@ public class PokemonDAO implements DAO<Pokemon>, DAOFields{
 
     @Override
     public String getUpdateString(String table) {
-        return "UPDATE "+ table +" SET Id = ?, URL = ?, nome = ?, raridade = ?, serie = ?, colecao = ?, quantidade = ? WHERE Id = ?;";
+        return "UPDATE "+ table +" SET Id = ?, URL = ?, nome = ?, raridade = ?, serie = ?, colecao = ?, Quantidade = ? WHERE Id = ?;";
     }
 
     @Override
     public String getInsertString(String table) {
-        return "INSERT INTO "+ table + " (Id, url, nome, raridade, serie, colecao, quantidade) VALUES (?, ?, ?, ?, ?, ?, ?);";
+        return "INSERT INTO "+ table + " (Id, url, nome, raridade, serie, colecao, Quantidade) VALUES (?, ?, ?, ?, ?, ?, ?);";
     }
 
     @Override
