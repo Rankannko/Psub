@@ -26,7 +26,7 @@ public class PokemonDAO implements DAO<Pokemon>, DAOFields{
             ResultSet result = statement.executeQuery(getSelectConditionalString(getTableName()) + condition);
             while(result.next()){
                 Pokemon pokemon = new Pokemon(
-                        result.getString("id"),
+                        result.getString("ID"),
                         result.getString("url"),
                         result.getString("nome"),
                         result.getString("raridade"),
@@ -51,7 +51,7 @@ public class PokemonDAO implements DAO<Pokemon>, DAOFields{
             ResultSet result = statement.executeQuery(getSelectAllString(getTableName()));
             while(result.next()){
                 Pokemon pokemon = new Pokemon(
-                        result.getString("id"),
+                        result.getString("Id"),
                         result.getString("url"),
                         result.getString("nome"),
                         result.getString("raridade"),

@@ -87,7 +87,7 @@ public class MenuDAO {
 
     private void exibirCartas() {
         pokemons = pokemonDAO.getAll();
-        System.out.println("Produto:");
+        System.out.println("Pokemons:");
         pokemons.forEach( pokemon-> System.out.println(pokemon));
     }
     private void menu() {

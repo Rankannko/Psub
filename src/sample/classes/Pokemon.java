@@ -10,6 +10,18 @@ public class Pokemon {
         this.ID = ID;
         this.quantidade=quantidade;
     }
+    @Override
+    public String toString() {
+        return "Pokemon{" +
+                "ID='" + ID + '\'' +
+                ", URL='" + URL + '\'' +
+                ", Nome='" + Nome + '\'' +
+                ", Raridade=" + Raridade +
+                ", Serie=" + Serie +
+                ", Colecao=" + Colecao +
+                ", quantidade=" + quantidade +
+                '}';
+    }
 
     public String getURL() {
         return URL;
