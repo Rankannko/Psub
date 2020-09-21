@@ -3,6 +3,9 @@ import java.sql.*;
 import java.util.Scanner;
 import sample.classes.Pokemon;
 
+/**
+ * Classe teste Menu, não utilizada no programa final mas permanece aqui para testes de implementação antes do uso da estratégia DAO.
+ */
 public class Menu {
     /*public static void Run(){
         String URL, nome, raridade, serie, set;
