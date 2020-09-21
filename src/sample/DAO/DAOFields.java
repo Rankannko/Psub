@@ -1,5 +1,8 @@
 package sample.DAO;
 
+/**
+ * Interface com os campos de DAOfields, que serão utilizados para as interações com a base de dados
+ */
 public interface DAOFields {
     String getTableName();
     String getDeleteString(String table);

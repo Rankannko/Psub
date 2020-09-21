@@ -6,10 +6,18 @@ import java.util.List;
 
 import sample.classes.Pokemon;
 
+/**
+ * Classe PokemonDAO, com as informações para que a classe Pokemon funcione corretamente com um banco de dados.
+ * @Author João Pedro de Pauda Santoro Azevedo RA: 18.02277-4 e-mail: azevedomasterjp27@hotmail.com
+ * @since 21/09
+ */
 public class PokemonDAO implements DAO<Pokemon>, DAOFields{
     private Connection connection;
     private String myDBConnectionString = "jdbc:sqlite:sqlite_paramodificar.db";
 
+    /**
+     * Inicializa a conecção com o banco de dados, colocado como arquivo.
+     */
     public PokemonDAO(){
     try{
         connection = DriverManager.getConnection(myDBConnectionString);
@@ -18,6 +26,10 @@ public class PokemonDAO implements DAO<Pokemon>, DAOFields{
         }
     }
 
+    /**
+     * @param condition Função get, feita para gerar uma lista com as informações do banco de dados, retornando uma lista propriamente formatada.
+     * @return Lista de pokemons
+     */
     @Override
     public List<Pokemon> get(String condition) {
         List<Pokemon> pokemons = new ArrayList<>();
@@ -43,6 +55,10 @@ public class PokemonDAO implements DAO<Pokemon>, DAOFields{
 
         return pokemons;
     }
+
+    /**
+     * @return Lista de pokemons, da como retorno todos os valores dessa lista.
+     */
     @Override
     public List<Pokemon> getAll() {
         List<Pokemon> pokemons = new ArrayList<>();
@@ -68,6 +84,10 @@ public class PokemonDAO implements DAO<Pokemon>, DAOFields{
 
         return pokemons;
     }
+
+    /**
+     * @param pokemon Função base, utilizada para atualizar valores de um dos items da base de dados
+     */
     @Override
     public void update(Pokemon pokemon) {
         try{
@@ -85,6 +105,10 @@ public class PokemonDAO implements DAO<Pokemon>, DAOFields{
             e.printStackTrace();
         }
     }
+
+    /**
+     * @param pokemon Função base, recebe um pokemon e o deleta da base de dados.
+     */
     @Override
     public void delete(Pokemon pokemon) {
         try{
@@ -95,6 +119,10 @@ public class PokemonDAO implements DAO<Pokemon>, DAOFields{
             e.printStackTrace();
         }
     }
+
+    /**
+     * @param pokemon Cria um novo pokemon, para o adicionar na base de dados
+     */
     @Override
     public void create(Pokemon pokemon) {
         try{
@@ -106,12 +134,17 @@ public class PokemonDAO implements DAO<Pokemon>, DAOFields{
             preparedStatement.setString(5, pokemon.getSerie());
             preparedStatement.setString(6, pokemon.getColecao());
             preparedStatement.setInt(7, pokemon.getQuantidade());
-            //Executa o PreparedStatement
             int retorno = preparedStatement.executeUpdate();
         }catch (Exception e){
             e.printStackTrace();
         }
     }
+
+    /**
+     * Funcões utilizadas para trabalhar com o SQL. Necessárias para modificar a base de dados, de acordo com os seus parâmetros
+     * @return
+     */
+
     @Override
     public String getTableName() {
         return "pokemons";

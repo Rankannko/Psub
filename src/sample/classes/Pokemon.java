@@ -1,5 +1,8 @@
 package sample.classes;
 
+/**
+ * Classe genérica pokemon, com todas as informações que uma carta tem. A base da base de dados, com getters 2 generators diferentes
+ */
 public class Pokemon {
     private String URL;
     private String Nome;
@@ -20,6 +23,7 @@ public class Pokemon {
     }
 
     public Pokemon(String ID) { this(ID,null,null,null,null,null,0); }
+
     @Override
     public String toString() {
         return "Pokemon{" +
